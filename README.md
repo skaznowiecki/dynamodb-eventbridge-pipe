@@ -1,14 +1,21 @@
-# Welcome to your CDK TypeScript project
+# DynamoDB Data Stream to EventBridge
 
-This is a blank project for CDK development with TypeScript.
+PoC to demonstrate how to use DynamoDB Streams to send events to EventBridge using EventBridge Pipes using CDK V2.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# Architecture
 
-## Useful commands
+![Architecture](https://github.com/skaznowiecki/dynamodb-eventbridge-pipe/blob/main/assets/architecture.png)
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+# Step to deploy
+
+1. Clone the repo
+2. Run `npm install`
+3. Run `cdk bootstrap` to bootstrap your AWS account
+4. Set up your environment variables in `bin/dynamodb-eventbridge-pipe.ts`
+5. Run `cdk deploy` to deploy the stack
+
+# Step to test
+
+1. Move to the `test` directory
+2. Run `npm ts-node test.ts` to test the stack
+3. Check the CloudWatch's lambda log to see the logs
